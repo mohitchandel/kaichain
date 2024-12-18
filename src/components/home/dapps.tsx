@@ -58,7 +58,7 @@ export default function Dapps() {
   return (
     <>
       <section className="bg-black overflow-hidden border-b-[0.1px] border-b-gray-800 font-poppins py-16">
-        <div ref={sectionRef} className="container mx-auto ">
+        <div ref={sectionRef} className="container mx-auto px-4">
           <div ref={contentRef} className="flex items-center justify-center">
             <h1 className="text-md text-gray-400 max-w-2xl mb-12 leading-relaxed">
               Explore the growing dApps and builders building on Kaichain.

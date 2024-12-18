@@ -83,7 +83,7 @@ export default function BlogCarousel() {
 
   return (
     <div ref={carouselRef} className="bg-black font-poppins">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-16">
           <h2 className="text-4xl md:max-w-md md:text-5xl text-white font-light">
             Stay Update with Latest in Web3
@@ -116,7 +116,7 @@ export default function BlogCarousel() {
             {circularPosts.map((post, index) => (
               <div
                 key={`${post.id}-${index}`}
-                className="w-1/3 flex-shrink-0 px-2"
+                className="w-full md:w-1/3 flex-shrink-0 px-2"
               >
                 <div className="p-4 border border-gray-800 hover:border-[#ffa706] rounded-3xl">
                   <img

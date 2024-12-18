@@ -2,74 +2,150 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+export default function TextImages() {
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-export default function Numbers() {
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const addToRefs = (el: HTMLDivElement | null) => {
+    if (el && !sectionRefs.current.includes(el)) {
+      sectionRefs.current.push(el);
+    }
+  };
 
   useEffect(() => {
-    const section = sectionRef.current;
+    gsap.registerPlugin(ScrollTrigger);
 
-    if (section) {
-      const items = section.querySelectorAll(".number-card");
-
-      gsap.fromTo(
-        items,
-        {
-          opacity: 0,
-          y: 50,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-          stagger: 0.2,
-          scrollTrigger: {
-            trigger: section,
-            start: "top 80%", // Animation starts when the section is 80% in view
-            toggleActions: "play none none none",
+    sectionRefs.current.forEach((section) => {
+      if (section) {
+        gsap.fromTo(
+          section,
+          {
+            opacity: 0,
+            y: 100,
           },
-        }
-      );
-    }
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1.5,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: section,
+              start: "top 80%", // trigger when the section reaches 80% of the viewport height
+              end: "bottom top",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      }
+    });
   }, []);
 
   return (
-    <section className="bg-black py-16" ref={sectionRef}>
-      <div className="container mx-auto">
-        <div className="flex flex-col items-center font-poppins">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-            <div className="rounded-lg shadow-2xl p-6 flex flex-col items-center number-card">
-              <div className="text-4xl text-white font-bold">24 Seconds</div>
-              <div className="text-gray-300 font-medium text-lg">
-                Block Time
-              </div>
+    <div className="bg-black py-20 font-poppins ">
+      <div className="container mx-auto px-4">
+        {/* Section 1 */}
+        <div ref={addToRefs} className="grid md:grid-cols-2 gap-6 items-center">
+          <div className="flex  items-center justify-center">
+            <div className="relative">
+              <div className="absolute inset-0 bg-[#ffa706] opacity-30 rounded-xl blur-2xl"></div>
+              <Image
+                src="/shapes/shape-4.png"
+                height={391}
+                width={340}
+                alt="3D geometric cubes with glowing edges"
+                className="relative z-10 shadow-2xl object-cover w-[450px] h-[450px] rounded-xl"
+              />
             </div>
+          </div>
+          <div className="space-y-6">
+            <h2 className="text-4xl text-white font-light leading-tight">
+              In-House Features
+            </h2>
+            <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
+              Blockchain alone is not enough. Several dApps are underway and
+              will take advantage of Kaichain&apos;s mechanics.
+            </p>
+            <Link
+              href="#"
+              className="text-gray-400 flex items-center text-center"
+            >
+              Learn More <ArrowRight className="h-5 w-5" />
+            </Link>
+          </div>
+        </div>
 
-            <div className="rounded-lg shadow-2xl p-6 flex flex-col items-center number-card">
-              <div className="text-4xl text-white font-bold">25,883,699</div>
-              <div className="text-gray-300 font-medium text-lg">
-                Current Blocks
-              </div>
-            </div>
-
-            <div className="rounded-lg shadow-2xl p-6 flex flex-col items-center number-card">
-              <div className="text-4xl text-white font-bold">33,854</div>
-              <div className="text-gray-300 font-medium text-lg">
-                Wallets Interacted
-              </div>
-            </div>
-
-            <div className="rounded-lg shadow-2xl p-6 flex flex-col items-center number-card">
-              <div className="text-4xl text-white font-bold">0.0001 KEC</div>
-              <div className="text-gray-300 font-medium text-lg">Gas Price</div>
+        {/* Section 2 */}
+        <div
+          ref={addToRefs}
+          className="mt-20 grid md:grid-cols-2 gap-12 items-center"
+        >
+          <div className="space-y-6">
+            <h2 className="text-4xl text-white font-light leading-tight">
+              Flawless Transaction
+            </h2>
+            <p className="text-gray-400 text-start text-lg leading-relaxed max-w-2xl">
+              Transactions will be smooth and is readily available ANYTIME and
+              ANYWHERE at maximum speed and efficiency.
+            </p>
+            <Link
+              href="#"
+              className="text-gray-400 flex items-center text-center"
+            >
+              Learn More <ArrowRight className="h-5 w-5" />
+            </Link>
+          </div>
+          <div className="flex items-center justify-center">
+            <div className="relative">
+              <div className="absolute inset-0 bg-[#ffa706] opacity-30 rounded-xl blur-2xl"></div>
+              <Image
+                src="/shapes/shape-5.png"
+                height={391}
+                width={340}
+                alt="3D geometric cubes with glowing edges"
+                className="relative z-10 shadow-2xl object-cover w-[450px] h-[450px] rounded-xl"
+              />
             </div>
           </div>
         </div>
+
+        {/* Section 3 */}
+        <div
+          ref={addToRefs}
+          className="mt-20 grid md:grid-cols-2 gap-12 items-center"
+        >
+          <div className="flex items-center justify-center">
+            <div className="relative">
+              <div className="absolute inset-0 bg-[#ffa706] opacity-30 rounded-xl blur-2xl"></div>
+              <Image
+                src="/shapes/shape-6.png"
+                height={450}
+                width={450}
+                alt="3D geometric cubes with glowing edges"
+                className="relative z-10 shadow-2xl object-cover w-[450px] h-[450px] rounded-xl"
+              />
+            </div>
+          </div>
+          <div className="space-y-6">
+            <h2 className="text-4xl text-white font-light leading-tight">
+              Unmatched Speed
+            </h2>
+            <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
+              With blocks compressed size, fast validations and high speed block
+              times, every transaction will just blast off.
+            </p>
+            <Link
+              href="#"
+              className="text-gray-400 flex items-center text-center"
+            >
+              Learn More <ArrowRight className="h-5 w-5" />
+            </Link>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   );
 }

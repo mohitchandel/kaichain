@@ -37,7 +37,7 @@ export default function TopCta() {
 
   return (
     <div className="relative bg-black text-white py-20 font-poppins">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2">
           <div
             ref={btnRef}
@@ -87,9 +87,9 @@ export default function TopCta() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto ">
+      <div className="container mx-auto px-4 mt-12">
         <div className="flex flex-col items-center justify-center">
-          <h1 className="text-5xl font-light text-white mb-6 leading-relaxed text-center">
+          <h1 className="text-4xl md:text-5xl font-light text-white mb-6 leading-relaxed text-center">
             Most secured Blockchain Solutions.
           </h1>
 

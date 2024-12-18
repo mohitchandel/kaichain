@@ -37,21 +37,21 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="border-b-[0.1px] border-b-gray-800 min-h-screen flex flex-col justify-center bg-black relative overflow-hidden font-poppins">
+    <div className="border-b-[0.1px] border-b-gray-800 md:min-h-screen flex flex-col justify-center bg-black relative overflow-hidden font-poppins py-16 md:py-1">
       <div className="absolute -right-[38%] bottom-[30%] w-[1400px] h-full">
         <img
           ref={imageRef}
           src="/shapes/shape-1.png"
           alt=""
-          className="animate-float"
+          className="animate-float hidden md:block"
         />
       </div>
 
       <div
         ref={contentRef}
-        className="relative z-10 flex flex-col items-start justify-center px-8 lg:px-16 container mx-auto h-full"
+        className="relative z-10 flex flex-col items-start justify-center px-8 container mx-auto h-full"
       >
-        <h1 className="text-5xl md:text-6xl lg:text-7xl text-white font-light max-w-3xl leading-[1.1] mb-8">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl text-white font-light max-w-3xl leading-[1.1] mb-8">
           The Architecture of Flawless{" "}
           <WordRotate
             className="text-[#ffa706]"
@@ -65,7 +65,7 @@ export default function Hero() {
           and environment-friendly transactions.
         </p>
 
-        <div ref={btnRef} className="flex flex-col sm:flex-row gap-4">
+        <div ref={btnRef} className="flex flex-row gap-4">
           <Button variant={"default"}>
             Learn More <ArrowRight />
           </Button>
