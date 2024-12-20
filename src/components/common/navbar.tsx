@@ -28,7 +28,7 @@ export default function NavBar() {
           </Link>
         </nav>
 
-        <Button variant="default" className="rounded-full px-6">
+        <Button variant="secondary" className="rounded-full px-6">
           Learn More
           <div className="text-white">
             <ArrowRight />

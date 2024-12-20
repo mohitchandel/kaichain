@@ -3,16 +3,16 @@ import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className=" py-20 flex justify-center items-center bg-gradient-to-b from-white via-white to-primary/20">
-      <div className="container mx-auto relative flex flex-col items-center justify-center text-center">
-        <div className="absolute left-[-35%] w-1/2 -translate-x-1/4 animate-float">
+    <section className="relative min-h-[90vh] flex justify-center items-center bg-gradient-to-b from-white via-white to-primary/80">
+      <div className="relative container mx-auto flex flex-col items-center justify-center text-center">
+        <div className="absolute left-[-35%] w-1/2 -translate-x-1/4 animate-float-slow">
           <img
             src="/shapes/shape-1.png"
             alt=""
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute right-[-35%] w-1/2  translate-x-1/4 animate-float-slow">
+        <div className="absolute right-[-35%] w-1/2 -translate-x-1/4  animate-float-slow">
           <img
             src="/shapes/shape-2.png"
             alt=""
@@ -27,7 +27,9 @@ export default function Hero() {
 
           <h1 className="text-4xl md:text-7xl  font-bold tracking-tight mb-6">
             The Architecture of Flawless{" "}
-            <span className="text-primary">Transactions</span>
+            <span className="bg-gradient-to-r from-primary via-primary/70 to-primary/50 inline-block text-transparent bg-clip-text">
+              Transactions
+            </span>
           </h1>
 
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
@@ -36,9 +38,13 @@ export default function Hero() {
             costs and environment-friendly transactions.
           </p>
 
-          <Button className="rounded-full">
+          <Button variant="secondary" className="rounded-full">
             Documentation
-            <div className="text-white">
+          </Button>
+
+          <Button variant="link" className="rounded-full text-black">
+            Learn More
+            <div className="text-black">
               <ArrowRight />
             </div>
           </Button>

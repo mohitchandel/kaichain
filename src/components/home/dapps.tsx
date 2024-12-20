@@ -18,7 +18,7 @@ export default function Dapps() {
 
   return (
     <>
-      <section className="overflow-hidden border-b-[0.1px] py-16 bg-gradient-to-b from-primary/20  to-white">
+      <section className="overflow-hidden border-b-[0.1px] py-16">
         <div ref={sectionRef} className="container mx-auto px-4">
           <div ref={contentRef} className="flex items-center justify-center">
             <h1 className="text-md max-w-2xl mb-12 leading-relaxed">
@@ -41,13 +41,13 @@ export default function Dapps() {
                     alt="Example SVG"
                     width={140}
                     height={80}
-                    className="opacity-50 hover:opacity-100 transition duration-300 mx-6"
+                    className="transition duration-300 mx-6 grayscale hover:grayscale-0"
                   />
                 </div>
               ))}
             </Marquee>
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#f3f4ff] dark:from-background"></div>{" "}
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-[#f3f4ff] dark:from-background"></div>
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>{" "}
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
           </div>
         </div>
       </section>
