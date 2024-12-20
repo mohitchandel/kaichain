@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ["var(--font-poppins)"],
+        manrope: ["var(--font-manrope)"],
       },
       colors: {
         background: "hsl(var(--background))",
@@ -24,7 +24,8 @@ export default {
           foreground: "hsl(var(--popover-foreground))",
         },
         primary: {
-          DEFAULT: "hsl(var(--primary))",
+          // DEFAULT: "hsl(var(--primary))",
+          DEFAULT: "#5863F8",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {

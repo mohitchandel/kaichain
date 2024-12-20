@@ -1,79 +1,49 @@
-"use client";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { Button } from "../ui/button";
-import WordRotate from "../ui/word-rotate";
 
 export default function Hero() {
-  const contentRef = useRef(null);
-  const btnRef = useRef(null);
-  const imageRef = useRef(null);
-
-  useEffect(() => {
-    const timeline = gsap.timeline({
-      defaults: { duration: 1, ease: "power3.out" },
-    });
-
-    timeline
-      .fromTo(
-        btnRef.current,
-        { x: "-100%", opacity: 0 },
-        { x: "0%", opacity: 1 },
-        "<0.2"
-      )
-      .fromTo(
-        contentRef.current,
-        { y: "100%", opacity: 0 },
-        { y: "0%", opacity: 1 },
-        "<0.2"
-      )
-      .fromTo(
-        imageRef.current,
-        { x: "100%", opacity: 0 },
-        { x: "0%", opacity: 1 },
-        "<0.2"
-      );
-  }, []);
-
   return (
-    <div className="border-b-[0.1px] border-b-gray-800 md:min-h-screen flex flex-col justify-center bg-black relative overflow-hidden font-poppins py-16 md:py-1">
-      <div className="absolute -right-[38%] bottom-[30%] w-[1400px] h-full">
-        <img
-          ref={imageRef}
-          src="/shapes/shape-1.png"
-          alt=""
-          className="animate-float hidden md:block"
-        />
-      </div>
-
-      <div
-        ref={contentRef}
-        className="relative z-10 flex flex-col items-start justify-center px-8 container mx-auto h-full"
-      >
-        <h1 className="text-4xl md:text-6xl lg:text-7xl text-white font-light max-w-3xl leading-[1.1] mb-8">
-          The Architecture of Flawless{" "}
-          <WordRotate
-            className="text-[#ffa706]"
-            words={["Transaction", "Execution", "Innovation", "Precision"]}
+    <section className="min-h-[calc(100vh-5rem)] py-20 flex justify-center items-center bg-gradient-to-b from-white via-white to-primary/20">
+      <div className="container mx-auto relative flex flex-col items-center justify-center text-center">
+        <div className="absolute left-[-35%] w-1/2 -translate-x-1/4 animate-float">
+          <img
+            src="/shapes/shape-1.png"
+            alt=""
+            className="w-full h-full object-cover"
           />
-        </h1>
+        </div>
+        <div className="absolute right-[-35%] w-1/2  translate-x-1/4 animate-float-slow">
+          <img
+            src="/shapes/shape-2.png"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
 
-        <p className="font-md text-gray-400 max-w-2xl mb-12 leading-relaxed">
-          Kaichain is a rising blockchain network that overcomes the upcoming
-          flaws in major ecosystems, such as higher TPS, lower operational costs
-          and environment-friendly transactions.
-        </p>
+        <div className="relative max-w-4xl mx-auto">
+          <span className="inline-block mb-6 px-4 py-2 bg-gray-100 rounded-full text-sm font-light">
+            Flawless Transactions
+          </span>
 
-        <div ref={btnRef} className="flex flex-row gap-4">
-          <Button variant={"default"}>
-            Learn More <ArrowRight />
-          </Button>
-          <Button variant={"default"}>
-            View Our Daps <ArrowRight />
+          <h1 className="text-4xl md:text-7xl  font-bold tracking-tight mb-6">
+            The Architecture of Flawless{" "}
+            <span className="text-primary">Transactions</span>
+          </h1>
+
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            Kaichain is a rising blockchain network that overcomes the upcoming
+            flaws in major ecosystems, such as higher TPS, lower operational
+            costs and environment-friendly transactions.
+          </p>
+
+          <Button className="rounded-full">
+            Documentation
+            <div className="text-white">
+              <ArrowRight />
+            </div>
           </Button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

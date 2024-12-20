@@ -7,7 +7,7 @@ import ValuesSection from "@/components/home/value-section";
 import Hero from "@/components/home/hero";
 export default function Home() {
   return (
-    <>
+    <main className="font-manrope">
       <Hero />
       <Dapps />
       <ValuesSection />
@@ -15,6 +15,6 @@ export default function Home() {
       <TopCta />
       <TextImages />
       <BlogCarousel />
-    </>
+    </main>
   );
 }

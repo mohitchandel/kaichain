@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/common/navbar";
+import Navbar from "@/components/common/navbar";
 import Footer from "@/components/common/footer";
 
-const poppins = Poppins({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-poppins",
+const manrope = Manrope({
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  variable: "--font-manrope",
   subsets: ["latin"],
 });
 
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} antialiased`}>
+      <body className={`${manrope.variable} antialiased`}>
         <Navbar />
         {children}
         <Footer />
