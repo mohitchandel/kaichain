@@ -1,76 +1,37 @@
 "use client";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import Image from "next/image";
+import { useRef } from "react";
 import Marquee from "../ui/marquee";
+import Image from "next/image";
 
 export default function Dapps() {
   const contentRef = useRef(null);
   const btnRef = useRef(null);
   const sectionRef = useRef(null);
 
-  const brands = [
-    "/brand1.svg",
-    "/brand2.svg",
-    "/brand3.svg",
-    "/brand4.svg",
-    "/brand5.svg",
-    "/brand6.svg",
+  const dapps = [
+    "/dapps/logoipsum-325.svg",
+    "/dapps/logoipsum-335.svg",
+    "/dapps/logoipsum-336.svg",
+    "/dapps/logoipsum-341.svg",
+    "/dapps/logoipsum-343.svg",
   ];
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const timeline = gsap.timeline({
-              defaults: { duration: 1, ease: "power3.out" },
-            });
-
-            timeline
-              .fromTo(
-                btnRef.current,
-                { x: "-100%", opacity: 0 },
-                { x: "0%", opacity: 1 },
-                "<0.2"
-              )
-              .fromTo(
-                contentRef.current,
-                { y: "100%", opacity: 0 },
-                { y: "0%", opacity: 1 },
-                "<0.2" // Staggered effect
-              );
-
-            observer.disconnect();
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <>
-      <section className="bg-black overflow-hidden border-b-[0.1px] border-b-gray-800 font-poppins py-16">
+      <section className="overflow-hidden border-b-[0.1px] py-16 bg-gradient-to-b from-primary/20  to-white">
         <div ref={sectionRef} className="container mx-auto px-4">
           <div ref={contentRef} className="flex items-center justify-center">
-            <h1 className="text-md text-gray-400 max-w-2xl mb-12 leading-relaxed">
+            <h1 className="text-md max-w-2xl mb-12 leading-relaxed">
               Explore the growing dApps and builders building on Kaichain.
             </h1>
           </div>
 
           <div
             ref={btnRef}
-            className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg md:shadow-xl"
+            className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg "
           >
-            <Marquee pauseOnHover className="[--duration:50s] ">
-              {brands.map((items, index) => (
+            <Marquee pauseOnHover className="[--duration:30s] ">
+              {dapps.map((items, index) => (
                 <div
                   key={index}
                   className="flex items-center justify-center space-x-6"
@@ -78,13 +39,15 @@ export default function Dapps() {
                   <Image
                     src={items}
                     alt="Example SVG"
-                    width={100}
-                    height={39}
+                    width={140}
+                    height={80}
                     className="opacity-50 hover:opacity-100 transition duration-300 mx-6"
                   />
                 </div>
               ))}
             </Marquee>
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#f3f4ff] dark:from-background"></div>{" "}
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-[#f3f4ff] dark:from-background"></div>
           </div>
         </div>
       </section>
