@@ -11,20 +11,17 @@ export default function NavBar() {
         </Link>
 
         <nav className="hidden md:flex items-center space-x-6">
-          <Link href="/about" className="text-sm font-medium hover:underline">
-            About
+          <Link href="#" className="text-sm font-medium hover:underline">
+            Docs
           </Link>
-          <Link
-            href="/services"
-            className="text-sm font-medium hover:underline"
-          >
-            Services
+          <Link href="#" className="text-sm font-medium hover:underline">
+            White Paper
           </Link>
-          <Link href="/results" className="text-sm font-medium hover:underline">
-            Results
+          <Link href="#" className="text-sm font-medium hover:underline">
+            Explorer
           </Link>
-          <Link href="/faq" className="text-sm font-medium hover:underline">
-            FAQ
+          <Link href="#" className="text-sm font-medium hover:underline">
+            Pitch Deck
           </Link>
         </nav>
 
