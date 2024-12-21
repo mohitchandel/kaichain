@@ -44,7 +44,7 @@ export function ExpertiseSection() {
           {Content.map((item) => (
             <Card
               key={item.id}
-              className="rounded-3xl group hover:bg-secondary hover:border-primary transition-all delay-200 ease-in-out"
+              className="rounded-3xl shadow-2xl shadow-primary/20 group hover:bg-secondary hover:border-primary transition-all delay-200 ease-in-out"
             >
               <CardContent className="pt-6">
                 <div className="relative rounded-lg flex aspect-square items-center justify-center mb-4 mx-auto">

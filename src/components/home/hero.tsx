@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex justify-center items-center bg-gradient-to-b from-white via-white to-primary/80">
+    <section className="relative overflow-hidden min-h-[90vh] flex justify-center items-center bg-gradient-to-b from-white via-white to-primary/80">
       <div className="relative container mx-auto flex flex-col items-center justify-center text-center">
         <div className="absolute left-[-35%] w-1/2 -translate-x-1/4 animate-float-slow">
           <img
