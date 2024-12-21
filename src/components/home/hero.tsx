@@ -5,14 +5,14 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden min-h-[90vh] flex justify-center items-center bg-gradient-to-b from-white via-white to-primary/80">
       <div className="relative container mx-auto flex flex-col items-center justify-center text-center">
-        <div className="absolute left-[-35%] w-1/2 -translate-x-1/4 animate-float-slow">
+        <div className="absolute -top-[32%] md:-top-20 left-[-5%] md:left-[-35%] w-1/2  animate-float-slow">
           <img
             src="/shapes/shape-1.webp"
             alt=""
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute right-[-35%] w-1/2 -translate-x-1/4  animate-float-slow">
+        <div className="absolute -bottom-[55%] md:-bottom-20 -right-[15%] md:right-[-35%] w-1/2 animate-float-slow">
           <img
             src="/shapes/shape-2.webp"
             alt=""

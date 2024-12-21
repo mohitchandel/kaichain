@@ -44,7 +44,7 @@ export function ChainKnowledge() {
   return (
     <section className="relative overflow-hidden py-24 px-4 bg-[#eceef2] ">
       <div className="container mx-auto relative">
-        <div className="absolute top-[5%] left-[-25%] w-1/2 animate-float-slow">
+        <div className="absolute top-[22%] md:top-[5%] left-[-25%] md:w-1/2 animate-float-slow">
           <img
             src="/shapes/shape-7.webp"
             alt=""
