@@ -1,5 +1,12 @@
+"use client";
 import { Card, CardContent } from "@/components/ui/card";
 import { Blocks, Brain, Lock, Shield, Coins, LineChart } from "lucide-react";
+import { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register ScrollTrigger plugin with GSAP
+gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
@@ -41,6 +48,25 @@ const services = [
 ];
 
 export function ChainKnowledge() {
+  useEffect(() => {
+    // GSAP animation on service cards
+    gsap.fromTo(
+      ".service-card", // Target all cards with this class
+      { opacity: 0, y: 100 }, // Initial state
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1, // Duration of the animation
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: ".service-card", // Trigger animation when card comes into view
+          start: "top 80%", // When the top of the card reaches 80% of the viewport height
+          once: true, // Animate only once when it comes into view
+        },
+      }
+    );
+  }, []);
+
   return (
     <section className="relative overflow-hidden py-24 px-4 bg-[#eceef2] ">
       <div className="container mx-auto relative">
@@ -67,7 +93,7 @@ export function ChainKnowledge() {
           {services.map((service, index) => (
             <Card
               key={index}
-              className="z-45 rounded-3xl shadow-2xl shadow-primary/20 backdrop-blur-2xl bg-white/30 border-none"
+              className="service-card z-45 rounded-3xl shadow-2xl shadow-primary/20 backdrop-blur-2xl bg-white/30 border-none"
             >
               <CardContent className="p-6">
                 <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>

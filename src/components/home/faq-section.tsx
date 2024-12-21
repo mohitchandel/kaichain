@@ -1,3 +1,7 @@
+"use client";
+import { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   Accordion,
   AccordionContent,
@@ -33,6 +37,27 @@ const questions = [
 ];
 
 export function FaqSection() {
+  useEffect(() => {
+    // Register ScrollTrigger plugin with GSAP
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Add animation to the accordion items when they come into view
+    gsap.utils.toArray(".accordion-item").forEach((item) => {
+      if (item instanceof HTMLElement) {
+        gsap.from(item, {
+          opacity: 0,
+          y: 50,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: item,
+            start: "top bottom", // When the top of the item reaches the bottom of the viewport
+            once: true, // Trigger animation only once
+          },
+        });
+      }
+    });
+  }, []);
   return (
     <section className="py-24 px-4 bg-muted/40">
       <div className="max-w-3xl mx-auto">
@@ -46,7 +71,11 @@ export function FaqSection() {
 
         <Accordion type="single" collapsible className="w-full">
           {questions.map((question, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
+            <AccordionItem
+              key={index}
+              value={`item-${index}`}
+              className="accordion-item"
+            >
               <AccordionTrigger>{question.q}</AccordionTrigger>
               <AccordionContent>{question.a}</AccordionContent>
             </AccordionItem>

@@ -1,5 +1,11 @@
+"use client";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
+import { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Content = [
   {
@@ -26,6 +32,32 @@ const Content = [
 ];
 
 export function ExpertiseSection() {
+  useEffect(() => {
+    // Trigger GSAP animations when the component comes into view
+    const elements = document.querySelectorAll(".expertise-card");
+
+    elements.forEach((el) => {
+      gsap.fromTo(
+        el,
+        {
+          opacity: 0,
+          y: 100,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 120%", // Animation triggers when element is 80% from the top of the viewport
+            once: true, // Trigger only once
+          },
+        }
+      );
+    });
+  }, []);
+
   return (
     <section className="py-24 px-4 bg-muted/40">
       <div className="container mx-auto text-center">
@@ -44,7 +76,7 @@ export function ExpertiseSection() {
           {Content.map((item) => (
             <Card
               key={item.id}
-              className="rounded-3xl shadow-2xl shadow-primary/20 group hover:bg-secondary hover:border-primary transition-all delay-200 ease-in-out"
+              className="rounded-3xl shadow-2xl shadow-primary/20 group hover:bg-secondary hover:border-primary transition-all delay-200 ease-in-out expertise-card"
             >
               <CardContent className="pt-6">
                 <div className="relative rounded-lg flex aspect-square items-center justify-center mb-4 mx-auto">

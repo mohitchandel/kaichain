@@ -1,7 +1,33 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register ScrollTrigger plugin with GSAP
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
+  useEffect(() => {
+    // GSAP animation for Hero section elements
+    gsap.fromTo(
+      ".hero-content", // Target the entire content section
+      { opacity: 0, y: 50 }, // Initial state: invisible and slightly lower
+      {
+        opacity: 1,
+        y: 0, // Final state: fully visible and in place
+        duration: 1, // Duration of animation
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: ".hero-content", // Trigger animation when the Hero content comes into view
+          start: "top 80%", // Start the animation when the top of the Hero content reaches 80% of the viewport
+          once: true, // Animate only once when it comes into view
+        },
+      }
+    );
+  }, []);
+
   return (
     <section className="relative overflow-hidden min-h-[90vh] flex justify-center items-center bg-gradient-to-b from-white via-white to-primary/80">
       <div className="relative container mx-auto flex flex-col items-center justify-center text-center">
@@ -20,12 +46,12 @@ export default function Hero() {
           />
         </div>
 
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-4xl mx-auto hero-content">
           <span className="inline-block mb-6 px-4 py-2 bg-gray-100 rounded-full text-sm font-light">
             Optimized For The Future
           </span>
 
-          <h1 className="text-4xl md:text-7xl  font-bold tracking-tight mb-6">
+          <h1 className="text-4xl md:text-7xl font-bold tracking-tight mb-6">
             The Architecture Of Flawless{" "}
             <span className="bg-gradient-to-r from-primary via-primary/70 to-primary/50 inline-block text-transparent bg-clip-text">
               Transactions
