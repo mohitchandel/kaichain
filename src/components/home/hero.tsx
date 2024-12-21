@@ -7,14 +7,14 @@ export default function Hero() {
       <div className="relative container mx-auto flex flex-col items-center justify-center text-center">
         <div className="absolute left-[-35%] w-1/2 -translate-x-1/4 animate-float-slow">
           <img
-            src="/shapes/shape-1.png"
+            src="/shapes/shape-1.webp"
             alt=""
             className="w-full h-full object-cover"
           />
         </div>
         <div className="absolute right-[-35%] w-1/2 -translate-x-1/4  animate-float-slow">
           <img
-            src="/shapes/shape-2.png"
+            src="/shapes/shape-2.webp"
             alt=""
             className="w-full h-full object-cover"
           />
@@ -22,11 +22,11 @@ export default function Hero() {
 
         <div className="relative max-w-4xl mx-auto">
           <span className="inline-block mb-6 px-4 py-2 bg-gray-100 rounded-full text-sm font-light">
-            Flawless Transactions
+            Optimized For The Future
           </span>
 
           <h1 className="text-4xl md:text-7xl  font-bold tracking-tight mb-6">
-            The Architecture of Flawless{" "}
+            The Architecture Of Flawless{" "}
             <span className="bg-gradient-to-r from-primary via-primary/70 to-primary/50 inline-block text-transparent bg-clip-text">
               Transactions
             </span>
