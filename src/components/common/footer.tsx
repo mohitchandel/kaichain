@@ -1,11 +1,8 @@
 import Link from "next/link";
-import {
-  Instagram,
-  Linkedin,
-  PinIcon as Pinterest,
-  Youtube,
-} from "lucide-react";
-import { Twitter } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaTelegramPlane, FaDiscord } from "react-icons/fa";
+import { ImFacebook2 } from "react-icons/im";
+import { FaMedium } from "react-icons/fa6";
 
 export default function Footer() {
   return (
@@ -28,31 +25,31 @@ export default function Footer() {
                   href="#"
                   className="hover:text-white text-gray-400 transition-colors text-xs"
                 >
-                  <Twitter className="w-5 h-5" />
+                  <FaXTwitter className="w-5 h-5" />
                 </Link>
                 <Link
                   href="#"
                   className="hover:text-white text-gray-400 transition-colors text-xs"
                 >
-                  <Instagram className="w-5 h-5" />
+                  <FaTelegramPlane className="w-5 h-5" />
                 </Link>
                 <Link
                   href="#"
                   className="hover:text-white text-gray-400 transition-colors text-xs"
                 >
-                  <Pinterest className="w-5 h-5" />
+                  <FaDiscord className="w-5 h-5" />
                 </Link>
                 <Link
                   href="#"
                   className="hover:text-white text-gray-400 transition-colors text-xs"
                 >
-                  <Linkedin className="w-5 h-5" />
+                  <ImFacebook2 className="w-5 h-5" />
                 </Link>
                 <Link
                   href="#"
                   className="hover:text-white text-gray-400 transition-colors text-xs"
                 >
-                  <Youtube className="w-5 h-5" />
+                  <FaMedium className="w-5 h-5" />
                 </Link>
               </div>
               <p className="text-white max-w-sm text-xs">

@@ -1,4 +1,7 @@
-import { Clock, DollarSign, Blocks, Wallet2 } from "lucide-react";
+import { Wallet2 } from "lucide-react";
+import { MdOutlineTimer3Select } from "react-icons/md";
+import { PiCubeFocus } from "react-icons/pi";
+import { RiGasStationLine } from "react-icons/ri";
 
 export function Stats() {
   return (
@@ -18,7 +21,7 @@ export function Stats() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="bg-[#eceef2] rounded-3xl p-6 ">
             <div className="rounded-lg w-12 h-12 flex items-center justify-center mb-4 bg-secondary p-3 text-white">
-              <Clock className="w-12 h-12" />
+              <MdOutlineTimer3Select className="w-12 h-12" />
             </div>
             <h2 className="text-4xl font-bold mb-2">3 Seconds</h2>
             <p className="text-muted-foreground">block time</p>
@@ -26,7 +29,7 @@ export function Stats() {
 
           <div className="bg-[#eceef2] rounded-3xl p-6 ">
             <div className="rounded-lg w-12 h-12 flex items-center justify-center mb-4 bg-secondary p-3 text-white">
-              <Blocks className="w-12 h-12" />
+              <PiCubeFocus className="w-12 h-12" />
             </div>
             <h2 className="text-4xl font-bold mb-2">25970400</h2>
             <p className="text-muted-foreground">Current Block</p>
@@ -34,7 +37,7 @@ export function Stats() {
 
           <div className="bg-[#eceef2] rounded-3xl p-6 ">
             <div className="rounded-lg w-12 h-12 flex items-center justify-center mb-4 bg-secondary p-3 text-white">
-              <DollarSign className="w-12 h-12" />
+              <RiGasStationLine className="w-12 h-12" />
             </div>
             <h2 className="text-4xl font-bold mb-2">0.0001 KEC</h2>
             <p className="text-muted-foreground">Gas Price</p>

@@ -1,13 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  ArrowRight,
-  Blocks,
-  Brain,
-  Lock,
-  Shield,
-  Coins,
-  LineChart,
-} from "lucide-react";
+import { Blocks, Brain, Lock, Shield, Coins, LineChart } from "lucide-react";
 
 const services = [
   {
@@ -65,8 +57,8 @@ export function ChainKnowledge() {
             Blockchain Designed for All – Developers and Dreamers
           </h2>
           <p className="text-muted-foreground mb-16">
-            Unlock the potential of blockchain for everyone, whether you're a
-            seasoned developer or just starting your journey. Kaichain bridges
+            Unlock the potential of blockchain for everyone, whether you&apos;re
+            a seasoned developer or just starting your journey. Kaichain bridges
             the gap, offering simplicity, efficiency, and sustainability to all.
           </p>
         </div>
