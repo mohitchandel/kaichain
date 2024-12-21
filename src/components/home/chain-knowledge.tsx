@@ -26,8 +26,9 @@ export function ChainKnowledge() {
               solutions grows, so do the challenges of scalability and
               efficiency. Kaichain addresses these hurdles with groundbreaking
               innovations, ensuring a sustainable, high-performance blockchain
-              ecosystem that's built to thrive in the long term. Explore how
-              Kaichain is driving adoption with unmatched speed and efficiency.
+              ecosystem that&apos;s built to thrive in the long term. Explore
+              how Kaichain is driving adoption with unmatched speed and
+              efficiency.
             </p>
             <Button variant="secondary" className="rounded-3xl">
               Learn More

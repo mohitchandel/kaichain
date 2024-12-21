@@ -34,7 +34,7 @@ export function ExpertiseSection() {
             Innovative Blockchain Technology
           </h2>
           <p className="text-muted-foreground mb-16">
-            Discover the pillars of Kaichain's cutting-edge infrastructure,
+            Discover the pillars of Kaichain&apos;s cutting-edge infrastructure,
             offering unmatched features, flawless transactions, and unparalleled
             speed for a seamless blockchain experience.
           </p>

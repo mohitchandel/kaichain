@@ -1,11 +1,4 @@
-import {
-  Clock,
-  FlowerIcon as Butterfly,
-  DollarSign,
-  Send,
-  Blocks,
-  Wallet2,
-} from "lucide-react";
+import { Clock, DollarSign, Blocks, Wallet2 } from "lucide-react";
 
 export function Stats() {
   return (
@@ -16,8 +9,8 @@ export function Stats() {
             Real-Time Metrics Driving Transparency and Performance
           </h1>
           <p className="text-muted-foreground ">
-            Showcase the key statistics that define Kaichain's efficiency and
-            accessibility, from gas prices to wallet interactions and block
+            Showcase the key statistics that define Kaichain&apos;s efficiency
+            and accessibility, from gas prices to wallet interactions and block
             times—all updated live to keep you informed.
           </p>
         </div>
