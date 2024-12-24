@@ -1,5 +1,5 @@
 import { ChainKnowledge } from "@/components/home/chain-knowledge";
-import Dapps from "@/components/home/dapps";
+import EcosystemMap from "@/components/home/ecosystem";
 import { EmpoweringSection } from "@/components/home/empowering-section";
 import { ExpertiseSection } from "@/components/home/expertise-section";
 import { FaqSection } from "@/components/home/faq-section";
@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main className="font-manrope relative bg-[#fcfbff]">
       <Hero />
-      <Dapps />
+      <EcosystemMap />
       <Stats />
       <EmpoweringSection />
       <MainSection />
