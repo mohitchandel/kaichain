@@ -12,14 +12,14 @@ interface EcosystemSection {
 }
 
 const colors = [
-  "bg-primary/90",
-  "bg-secondary",
-  "bg-green-800",
-  "bg-purple-800",
-  "bg-slate-500",
-  "bg-gray-800",
-  "bg-zinc-600",
-  "bg-neutral-500",
+  "bg-slate-900",
+  //   "bg-secondary",
+  //   "bg-pu-800",
+  //   "bg-purple-800",
+  //   "bg-slate-500",
+  //   "bg-gray-800",
+  //   "bg-zinc-600",
+  //   "bg-neutral-500",
 ];
 
 const getColor = (index: number) => colors[index % colors.length];
@@ -171,7 +171,7 @@ export default function EcosystemMap() {
         <div className="columns-4 gap-8">
           {ecosystemData.map((section, sectionIndex) => (
             <div key={section.title} className="inline-block w-full mb-4">
-              <h2 className="text-sm font-semibold text-gray-500 border-b pb-2">
+              <h2 className="text-lg font-semibold text-secondary border-b pb-2">
                 {section.title}
               </h2>
               <div className="flex flex-col">
