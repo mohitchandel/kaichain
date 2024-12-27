@@ -5,31 +5,29 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Register ScrollTrigger plugin with GSAP
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
   useEffect(() => {
-    // GSAP animation for Hero section elements
     gsap.fromTo(
-      ".hero-content", // Target the entire content section
-      { opacity: 0, y: 50 }, // Initial state: invisible and slightly lower
+      ".hero-content",
+      { opacity: 0, y: 50 },
       {
         opacity: 1,
-        y: 0, // Final state: fully visible and in place
-        duration: 1, // Duration of animation
+        y: 0,
+        duration: 1,
         ease: "power4.out",
         scrollTrigger: {
-          trigger: ".hero-content", // Trigger animation when the Hero content comes into view
-          start: "top 80%", // Start the animation when the top of the Hero content reaches 80% of the viewport
-          once: true, // Animate only once when it comes into view
+          trigger: ".hero-content",
+          start: "top 80%",
+          once: true,
         },
       }
     );
   }, []);
 
   return (
-    <section className="relative overflow-hidden min-h-[90vh] flex justify-center items-center bg-gradient-to-b from-white via-white to-primary/80">
+    <section className="relative  overflow-hidden min-h-[90vh] flex justify-center items-center bg-gradient-to-b from-white via-white to-primary/80">
       <div className="relative container mx-auto flex flex-col items-center justify-center text-center">
         <div className="absolute -top-[32%] md:-top-20 left-[-5%] md:left-[-35%] w-1/2  animate-float-slow">
           <img
