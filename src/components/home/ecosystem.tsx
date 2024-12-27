@@ -11,18 +11,8 @@ interface EcosystemSection {
   items: EcosystemItem[];
 }
 
-const colors = [
-  "bg-slate-900",
-  //   "bg-secondary",
-  //   "bg-pu-800",
-  //   "bg-purple-800",
-  //   "bg-slate-500",
-  //   "bg-gray-800",
-  //   "bg-zinc-600",
-  //   "bg-neutral-500",
-];
+const colors = ["bg-slate-900"];
 
-const getColor = (index: number) => colors[index % colors.length];
 
 const ecosystemData: EcosystemSection[] = [
   {
@@ -160,41 +150,44 @@ const ecosystemData: EcosystemSection[] = [
     items: [{ name: "PUMP IT", logo: "/dapps/logoipsum-340.svg" }],
   },
 ];
-
 export default function EcosystemMap() {
   return (
-    <div className="py-16">
-      <div className="container mx-auto px-4">
-        <div className="mb-16 mx-auto">
-          <h2 className="text-4xl font-bold mb-4">Our Ecosystem Map</h2>
-        </div>
-        <div className="columns-4 gap-8">
+    <div className="py-12 bg-gray-50">
+      <div className="container mx-auto px-18 sm:px-6 lg:px-8">
+        <h1 className="text-4xl font-extrabold text-center text-gray-800 mb-10">
+          Ecosystem Map
+        </h1>
+        <div className="columns-1 sm:columns-2 lg:columns-4 gap-8">
           {ecosystemData.map((section, sectionIndex) => (
-            <div key={section.title} className="inline-block w-full mb-4">
-              <h2 className="text-lg font-semibold text-secondary border-b pb-2">
+            <div
+              key={section.title}
+              className="inline-block w-full mb-8 break-inside-avoid"
+            >
+              <h2 className="text-blue-600 text-xl font-semibold mb-4 flex items-center gap-2">
                 {section.title}
+                <div className="h-[1px] flex-1 bg-blue-200" />
               </h2>
-              <div className="flex flex-col">
+              <div className="space-y-3">
                 {section.items.map((item) => (
                   <Card
                     key={item.name}
-                    className={`${getColor(
-                      sectionIndex
-                    )} hover:opacity-90 transition-opacity text-white p-2 flex items-center space-x-2 mt-1`}
+                    className={`${
+                      colors[sectionIndex % colors.length]
+                    } hover:opacity-90 hover:shadow-xl transition-all duration-300 text-white p-3 flex items-center gap-3 rounded-lg`}
                   >
-                    <div className="bg-white p-1 rounded">
+                    <div className="bg-white p-1 rounded-full shadow-md">
                       <img
                         src={item.logo}
-                        alt=""
-                        className="w-5 h-5"
-                        width={20}
-                        height={20}
+                        alt={item.name}
+                        className="w-6 h-6 object-contain"
+                        width={24}
+                        height={24}
                       />
                     </div>
-                    <span className="text-sm font-medium">
+                    <span className="font-medium text-sm">
                       {item.name}
                       {item.comingSoon && (
-                        <span className="ml-2 text-xs bg-black/30 px-2 py-0.5 rounded">
+                        <span className="ml-2 text-xs bg-gray-800/40 text-white px-2 py-1 rounded-full">
                           COMING SOON
                         </span>
                       )}
