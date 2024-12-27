@@ -75,9 +75,12 @@ export function EmpoweringSection() {
               efficiency.
             </p>
             <Button variant="secondary" className="rounded-3xl">
-              Learn More
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
+  <a href="/learnmore" className="flex items-center">
+    Learn More
+    <ArrowRight className="w-4 h-4 ml-2" />
+  </a>
+</Button>
+
           </div>
 
           <div className="space-y-6">
