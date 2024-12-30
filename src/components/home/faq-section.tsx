@@ -38,10 +38,8 @@ const questions = [
 
 export function FaqSection() {
   useEffect(() => {
-    // Register ScrollTrigger plugin with GSAP
     gsap.registerPlugin(ScrollTrigger);
 
-    // Add animation to the accordion items when they come into view
     gsap.utils.toArray(".accordion-item").forEach((item) => {
       if (item instanceof HTMLElement) {
         gsap.from(item, {
@@ -51,8 +49,8 @@ export function FaqSection() {
           ease: "power3.out",
           scrollTrigger: {
             trigger: item,
-            start: "top bottom", // When the top of the item reaches the bottom of the viewport
-            once: true, // Trigger animation only once
+            start: "top bottom",
+            once: true,
           },
         });
       }

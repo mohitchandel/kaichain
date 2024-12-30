@@ -9,7 +9,6 @@ export default function Footer() {
     <footer className="bg-black text-white py-20 font-manrope">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 text-xs">
-          {/* Logo and Description Section */}
           <div className="lg:col-span-8">
             <div className="flex flex-col gap-6">
               <p className="text-xl">Kaichain</p>
@@ -19,19 +18,23 @@ export default function Footer() {
                 track your progress, motivate your efforts, and celebrate your
                 successes.
               </p>
-              {/* Social Icons */}
               <div className="flex gap-6 mt-4">
                 <Link
-                  href="#"
+                  href="https://x.com/KaiChain1"
                   className="hover:text-white text-gray-400 transition-colors text-xs"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <FaXTwitter className="w-5 h-5" />
                 </Link>
+
                 <Link
-                  href="#"
+                  href="https://t.me/KaiChain"
                   className="hover:text-white text-gray-400 transition-colors text-xs"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <FaTelegramPlane className="w-5 h-5" />
+                  <FaTelegramPlane className="w-5 h-5" />{" "}
                 </Link>
                 <Link
                   href="#"
@@ -40,8 +43,10 @@ export default function Footer() {
                   <FaDiscord className="w-5 h-5" />
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.facebook.com/people/KAICHAIN-The-Architecture-of-Flawless-Transactions/100083068885286/"
                   className="hover:text-white text-gray-400 transition-colors text-xs"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <ImFacebook2 className="w-5 h-5" />
                 </Link>
@@ -58,10 +63,8 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Navigation Links Section */}
           <div className="lg:col-span-4 text-sm">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {/* Product Column */}
               <div>
                 <h3 className="text-sm text-white font-bold mb-4">Product</h3>
                 <ul className="space-y-3">
@@ -108,7 +111,6 @@ export default function Footer() {
                 </ul>
               </div>
 
-              {/* Company Column */}
               <div>
                 <h3 className="text-sm text-white font-bold mb-4">Company</h3>
                 <ul className="space-y-3">
@@ -163,7 +165,6 @@ export default function Footer() {
                 </ul>
               </div>
 
-              {/* Resources Column */}
               <div>
                 <h3 className="text-sm text-white font-bold mb-4">Resources</h3>
                 <ul className="space-y-3">
@@ -202,7 +203,6 @@ export default function Footer() {
                 </ul>
               </div>
 
-              {/* Legal Column */}
               <div>
                 <h3 className="text-sm text-white font-bold mb-4">Legal</h3>
                 <ul className="space-y-3">
