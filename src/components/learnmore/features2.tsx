@@ -19,7 +19,7 @@ export default function Features2() {
         scrollTrigger: {
           trigger: ".kaichain-logo",
           start: "top 80%",
-          once: true, 
+          once: true,
         },
       }
     );
@@ -101,7 +101,7 @@ export default function Features2() {
 
           <div className="text-black space-y-8 content">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-gray-900">
-              Unmatched Speed
+              Unmatched Speed 
             </h2>
             <p className="text-lg sm:text-xl text-gray-700 max-w-xl">
               Protect your financial information. Kaichain ensures your activity

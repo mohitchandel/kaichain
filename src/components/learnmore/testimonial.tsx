@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Testimonial() {
   useEffect(() => {
-    // Logo animation
++
     gsap.fromTo(
       ".kaichain-logo",
       { x: -500, opacity: 0 },
@@ -21,12 +21,11 @@ export default function Testimonial() {
         scrollTrigger: {
           trigger: ".kaichain-logo",
           start: "top 80%",
-          once: true, // Trigger only once
+          once: true, 
         },
       }
     );
 
-    // Rotating logo continuously
     gsap.to(".kaichain-logo", {
       rotation: 360,
       duration: 30,
@@ -35,7 +34,6 @@ export default function Testimonial() {
       transformOrigin: "center center",
     });
 
-    // Content fade-in and slide-up
     gsap.fromTo(
       ".content",
       { opacity: 0, y: 50 },
@@ -47,12 +45,11 @@ export default function Testimonial() {
         scrollTrigger: {
           trigger: ".content",
           start: "top 80%",
-          once: true, // Trigger only once
+          once: true, 
         },
       }
     );
 
-    // List items with staggered animations
     gsap.fromTo(
       ".content li",
       { opacity: 0, x: -30 },
@@ -65,7 +62,7 @@ export default function Testimonial() {
         scrollTrigger: {
           trigger: ".content",
           start: "top 80%",
-          once: true, // Trigger only once
+          once: true, 
         },
       }
     );
@@ -75,7 +72,6 @@ export default function Testimonial() {
     <div className="relative flex items-center justify-center overflow-hidden bg-gradient-to-r from-blue-100 via-white to-blue-100">
       <div className="container mx-auto px-4 py-12 md:py-20 relative">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Content Section */}
           <div className="text-black space-y-8 content">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-gray-900">
               Flawless Transaction
@@ -99,7 +95,6 @@ export default function Testimonial() {
             </ul>
           </div>
 
-          {/* Logo Section */}
           <div className="relative flex justify-center">
             <div className="w-[350px] sm:w-[400px] lg:w-[500px] h-[350px] sm:h-[400px] lg:h-[500px] mx-auto rounded-full flex items-center justify-center kaichain-logo group">
               <div className="w-full h-full">
